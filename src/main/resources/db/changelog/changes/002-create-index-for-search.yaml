@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-create-index-for-search
+      author: ragnar-alan
+      changes:
+          - sql:
+                sql: |
+                    CREATE INDEX recipe_search_idx 
+                    ON recipes USING GIN (to_tsvector('english', name || ' ' || ingredients || ' ' || description));
