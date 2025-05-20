@@ -1,0 +1,35 @@
+package com.ragnaralan.recipebook.service;
+
+import com.ragnaralan.recipebook.exception.RecipeNotFoundException;
+import com.ragnaralan.recipebook.mapper.RecipeMapper;
+import com.ragnaralan.recipebook.model.dto.RecipeDto;
+import com.ragnaralan.recipebook.model.dto.SimpleRecipeDto;
+import com.ragnaralan.recipebook.repository.RecipeRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class RecipeService {
+    private final RecipeMapper mapper;
+    private final RecipeRepository repository;
+
+    public RecipeDto getRecipe(Long id) {
+        var recipe = repository.findById(id);
+        return recipe
+                .map(mapper::toDto)
+                .orElseThrow(() -> new RecipeNotFoundException("Recipe not found"));
+    }
+
+    public List<SimpleRecipeDto> getSimpleRecipeList() {
+        //@TODO add pagination if you have time for it
+        // - https://howtodoinjava.com/spring-data/pagination-sorting-example/
+        return repository.findAll()
+                .stream()
+                .map(mapper::toSimpleDto)
+                .toList();
+    }
+
+}
