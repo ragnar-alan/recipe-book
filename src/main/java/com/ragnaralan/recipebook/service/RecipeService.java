@@ -4,6 +4,7 @@ import com.ragnaralan.recipebook.exception.RecipeNotFoundException;
 import com.ragnaralan.recipebook.mapper.RecipeMapper;
 import com.ragnaralan.recipebook.model.dto.RecipeDto;
 import com.ragnaralan.recipebook.model.dto.SimpleRecipeDto;
+import com.ragnaralan.recipebook.model.request.CreateRecipeRequest;
 import com.ragnaralan.recipebook.repository.RecipeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,4 +33,8 @@ public class RecipeService {
                 .toList();
     }
 
+    public RecipeDto createRecipe(CreateRecipeRequest request) {
+        var recipeEntity = mapper.toEntity(request);
+        return mapper.toDto(repository.save(recipeEntity));
+    }
 }

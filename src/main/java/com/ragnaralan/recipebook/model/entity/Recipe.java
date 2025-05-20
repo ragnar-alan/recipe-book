@@ -24,7 +24,7 @@ import java.util.List;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "recipe")
+@Table(name = "recipes")
 @Entity
 public class Recipe {
 
@@ -44,6 +44,7 @@ public class Recipe {
     private Integer cookingTimeInMinutes;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "type_of_meal")
     private MealType type;
 
     @CreatedDate
