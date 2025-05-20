@@ -15,10 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RecipeService {
     private final RecipeMapper mapper;
-    private final RecipeRepository repository;
+    private final RecipeRepository recipeRepository;
+    private final RecipeMapper recipeMapper;
 
     public RecipeDto getRecipe(Long id) {
-        var recipe = repository.findById(id);
+        var recipe = recipeRepository.findById(id);
         return recipe
                 .map(mapper::toDto)
                 .orElseThrow(() -> new RecipeNotFoundException("Recipe not found"));
@@ -27,7 +28,7 @@ public class RecipeService {
     public List<SimpleRecipeDto> getSimpleRecipeList() {
         //@TODO add pagination if you have time for it
         // - https://howtodoinjava.com/spring-data/pagination-sorting-example/
-        return repository.findAll()
+        return recipeRepository.findAll()
                 .stream()
                 .map(mapper::toSimpleDto)
                 .toList();
@@ -35,6 +36,19 @@ public class RecipeService {
 
     public RecipeDto createRecipe(CreateRecipeRequest request) {
         var recipeEntity = mapper.toEntity(request);
-        return mapper.toDto(repository.save(recipeEntity));
+        return mapper.toDto(recipeRepository.save(recipeEntity));
+    }
+
+    public void deleteRecipe(Long recipeId) {
+        if (!recipeRepository.existsById(recipeId)) {
+            throw new RecipeNotFoundException("Recipe not found");
+        }
+        recipeRepository.deleteById(recipeId);
+    }
+
+    public List<SimpleRecipeDto> searchForRecipes(String searchExpression) {
+        return recipeRepository.searchForRecipes(searchExpression)
+                .stream().map(recipeMapper::toSimpleDto)
+                .toList();
     }
 }
