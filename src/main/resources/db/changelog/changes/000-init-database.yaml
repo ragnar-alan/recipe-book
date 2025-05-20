@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: 000-init-database
+      author: ragnar-alan
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: hibernate_sequence
+            startValue: 10000
+  - changeSet:
+      id: 001-create-table-recipes
+      author: ragnar-alan
+      preConditions:
+          - onFail: MARK_RAN
+          - not:
+              - tableExists:
+                  tableName: recipes
+      changes:
+        - createTable:
+            tableName: recipes
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                    name: ingredients
+                    type: JSONB
+                    constraints:
+                        nullable: false
+              - column:
+                  name: cooking_time_in_minutes
+                  type: INTEGER
+              - column:
+                  name: type_of_meal
+                  type: VARCHAR(50)
+              - column:
+                    name: created_at
+                    type: DATE
+        - createIndex:
+            indexName: idx_recipes_name
+            tableName: recipes
+            columns:
+              - column:
+                  name: name
