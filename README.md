@@ -52,6 +52,20 @@ It should look like this at the end if you set it up in IntelliJ
 ![img.png](img.png)
 Then connect your IDE to port 5005 and run it in debug mode.
 
+## Trying it out
+### Postman
+You can do it with Postman or any other tool. The cool thing is that you can use the exported Postman collection which is in the project root directory. You can import it into Postman and try it out.
+> The file name for the Postman collection is ```RecipeBook.postman_collection.json```
+
+### Simple UI
+I AI generated a Simple UI for the application. After you run the application you can access it at:
+[Home Page](http://localhost:8080/)
+> NOTE! If you just started the application I have to disappoint you. There won't be any recipes in the database. You can create them with the UI or use Postman to create them. The UI is just a simple way to test the API. But the faster way is Postman or a similar application. For this purpose I added a bulk create recipe endpoint. So you can easily try it out with more recipes.
+
+### Swagger
+You can also access the Swagger UI at:
+[Swagger](http://localhost:8080/swagger-ui/index.html)
+
 ## API Documentation
 
 ### Swagger UI

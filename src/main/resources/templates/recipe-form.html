@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Recipe Book</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/recipe-form.html">Add Recipe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Recipe</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Add New Recipe</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="recipeForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Recipe Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                                <div class="invalid-feedback">Name is required</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3" required></textarea>
+                                <div class="invalid-feedback">Description is required</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="cooking_time_in_minutes" class="form-label">Cooking Time (minutes)</label>
+                                <input type="number" class="form-control" id="cooking_time_in_minutes" min="1" required>
+                                <div class="invalid-feedback">Cooking time is required</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="type" class="form-label">Meal Type</label>
+                                <select class="form-select" id="type" required>
+                                    <option value="" selected disabled>Select meal type</option>
+                                    <option value="BREAKFAST">Breakfast</option>
+                                    <option value="LUNCH">Lunch</option>
+                                    <option value="DINNER">Dinner</option>
+                                </select>
+                                <div class="invalid-feedback">Meal type is required</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Ingredients</label>
+                                <div id="ingredientsList">
+                                    <div class="ingredient-item row mb-2">
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control ingredient-name" placeholder="Ingredient name" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="number" class="form-control ingredient-amount" placeholder="Amount" step="0.01" min="0.01" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control ingredient-unit" placeholder="Unit (e.g., g, ml)">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button type="button" class="btn btn-danger remove-ingredient">×</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-secondary mt-2" id="addIngredient">Add Ingredient</button>
+                                <div class="invalid-feedback" id="ingredientsError">At least one ingredient is required</div>
+                            </div>
+                            
+                            <div class="alert alert-danger d-none" id="formErrors">
+                                Please fix the errors in the form.
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="/" class="btn btn-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Save Recipe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ingredient Template -->
+    <template id="ingredient-template">
+        <div class="ingredient-item row mb-2">
+            <div class="col-md-5">
+                <input type="text" class="form-control ingredient-name" placeholder="Ingredient name" required>
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control ingredient-amount" placeholder="Amount" step="0.01" min="0.01" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control ingredient-unit" placeholder="Unit (e.g., g, ml)">
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-danger remove-ingredient">×</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/recipe-form.js"></script>
+</body>
+</html>

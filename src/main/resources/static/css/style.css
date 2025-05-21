@@ -1,0 +1,73 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Recipe Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.cooking-time:before {
+    content: "⏱️ ";
+}
+
+/* Recipe Detail */
+.ingredients-list {
+    margin-top: 10px;
+}
+
+/* Form Styles */
+.ingredient-item {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.remove-ingredient {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Meal Type Badges */
+.badge.meal-type {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.badge.meal-type.BREAKFAST {
+    background-color: #ffc107 !important;
+    color: #212529;
+}
+
+.badge.meal-type.LUNCH {
+    background-color: #17a2b8 !important;
+}
+
+.badge.meal-type.DINNER {
+    background-color: #6f42c1 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ingredient-item .col-md-1 {
+        margin-top: 10px;
+    }
+}
