@@ -4,22 +4,28 @@ import com.ragnaralan.recipebook.model.MealType;
 import com.ragnaralan.recipebook.model.dto.IngredientDto;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-public record CreateRecipeRequest(
+@Getter
+@Setter
+@AllArgsConstructor
+public class CreateRecipeRequest {
         @NotEmpty(message = "Name must not be empty")
-        String name,
+        private String name;
 
         @NotEmpty(message = "Description must not be empty")
-        String description,
+        private String description;
 
         @NotEmpty(message = "At least one ingredient must be provided")
-        List<IngredientDto> ingredients,
+        private List<IngredientDto> ingredients;
 
         @NotNull(message = "Cooking time must be provided")
-        Integer cookingTimeInMinutes,
+        private Integer cookingTimeInMinutes;
 
         @NotNull(message = "Meal type must be provided")
-        MealType type
-) { }
+        private MealType type;
+}
