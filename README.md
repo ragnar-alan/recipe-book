@@ -38,7 +38,7 @@ When you run the application in Docker you can remote debug the application. Tha
 ### How to do that in IntelliJ?
 - Click here to edit or add a run configuration.
 
-![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 
 After that click to the top left to add a new ```Remote JVM debug``` configuration.
 
