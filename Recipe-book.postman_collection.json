@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "f7ec22af-e56f-4987-85ea-1755460f9be4",
+		"name": "Recipe-book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2963399"
+	},
+	"item": [
+		{
+			"name": "Create recipe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Spaghetti Bolognese\",\r\n  \"ingredients\": [\r\n    {\r\n      \"name\": \"Spaghetti\",\r\n      \"amount\": 200,\r\n      \"unit\": \"grams\"\r\n    },\r\n    {\r\n      \"name\": \"Ground Beef\",\r\n      \"amount\": 300,\r\n      \"unit\": \"grams\"\r\n    }\r\n  ],\r\n  \"cooking_time_in_minutes\": 45,\r\n  \"type\": \"DINNER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[BULK] Create recipe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n  \"name\": \"Spaghetti Bolognese\",\r\n  \"description\": \"Spaghetti Bolognese is a classic Italian dish that combines rich, slow-cooked meat sauce with perfectly cooked pasta. The sauce, known as ragù alla Bolognese, originates from Bologna, Italy, and is traditionally made with a combination of ground beef, aromatic vegetables like onions, carrots, and celery, and a blend of tomatoes, wine, and herbs. The slow simmering process allows the flavors to meld beautifully, creating a deep, savory taste that pairs wonderfully with the al dente spaghetti. This dish is a staple in many households, offering a comforting and satisfying meal that is both hearty and full of flavor. \\r\\n The preparation of Spaghetti Bolognese involves carefully browning the meat to enhance its richness, followed by the addition of finely chopped vegetables to build layers of flavor. A splash of red wine adds depth, while tomatoes and broth create the perfect base for the sauce. The slow cooking process ensures that the sauce thickens and develops a robust taste, making it ideal for coating strands of spaghetti. Some variations include a touch of milk or cream to balance the acidity of the tomatoes, resulting in a smoother and more velvety texture. The final touch is a generous sprinkle of freshly grated Parmesan cheese and a handful of chopped parsley for added freshness. \\r\\n Spaghetti Bolognese is more than just a meal—it’s a dish that brings people together. Whether enjoyed as a comforting weeknight dinner or served at a gathering with friends and family, its rich and satisfying flavors make it a favorite worldwide. The versatility of the sauce allows it to be used in other dishes, such as lasagna or stuffed pasta, making it a valuable recipe to master. Paired with a glass of red wine and some crusty garlic bread, Spaghetti Bolognese is a timeless dish that continues to delight food lovers everywhere.\",\r\n  \"ingredients\": [\r\n    {\r\n      \"name\": \"Spaghetti\",\r\n      \"amount\": 200,\r\n      \"unit\": \"grams\"\r\n    },\r\n    {\r\n      \"name\": \"Ground Beef\",\r\n      \"amount\": 300,\r\n      \"unit\": \"grams\"\r\n    }\r\n  ],\r\n  \"cooking_time_in_minutes\": 45,\r\n  \"type\": \"DINNER\"\r\n},{\r\n  \"name\": \"Spaghetti Carbonara\",\r\n  \"description\": \"Classic Italian pasta with creamy sauce and pancetta.\",\r\n  \"ingredients\": [\r\n    { \"name\": \"Spaghetti\", \"amount\": 200, \"unit\": \"g\" },\r\n    { \"name\": \"Pancetta\", \"amount\": 100, \"unit\": \"g\" },\r\n    { \"name\": \"Eggs\", \"amount\": 2, \"unit\": \"pcs\" },\r\n    { \"name\": \"Parmesan Cheese\", \"amount\": 50, \"unit\": \"g\" }\r\n  ],\r\n  \"cooking_time_in_minutes\": 25,\r\n  \"type\": \"DINNER\"\r\n},{\r\n  \"name\": \"Avocado Toast\",\r\n  \"description\": \"Quick and healthy breakfast with smashed avocado.\",\r\n  \"ingredients\": [\r\n    { \"name\": \"Bread\", \"amount\": 2, \"unit\": \"slices\" },\r\n    { \"name\": \"Avocado\", \"amount\": 1, \"unit\": \"pcs\" },\r\n    { \"name\": \"Lemon Juice\", \"amount\": 1, \"unit\": \"tbsp\" },\r\n    { \"name\": \"Salt\", \"amount\": 0.5, \"unit\": \"tsp\" }\r\n  ],\r\n  \"cooking_time_in_minutes\": 10,\r\n  \"type\": \"BREAKFAST\"\r\n},{\r\n  \"name\": \"Chicken Caesar Salad\",\r\n  \"description\": \"Fresh salad with grilled chicken and Caesar dressing.\",\r\n  \"ingredients\": [\r\n    { \"name\": \"Chicken Breast\", \"amount\": 150, \"unit\": \"g\" },\r\n    { \"name\": \"Romaine Lettuce\", \"amount\": 100, \"unit\": \"g\" },\r\n    { \"name\": \"Croutons\", \"amount\": 30, \"unit\": \"g\" },\r\n    { \"name\": \"Caesar Dressing\", \"amount\": 2, \"unit\": \"tbsp\" }\r\n  ],\r\n  \"cooking_time_in_minutes\": 20,\r\n  \"type\": \"LUNCH\"\r\n},{\r\n  \"name\": \"Vegetable Stir Fry\",\r\n  \"description\": \"Colorful stir fry with mixed vegetables and soy sauce.\",\r\n  \"ingredients\": [\r\n    { \"name\": \"Broccoli\", \"amount\": 100, \"unit\": \"g\" },\r\n    { \"name\": \"Carrot\", \"amount\": 1, \"unit\": \"pcs\" },\r\n    { \"name\": \"Bell Pepper\", \"amount\": 1, \"unit\": \"pcs\" },\r\n    { \"name\": \"Soy Sauce\", \"amount\": 2, \"unit\": \"tbsp\" }\r\n  ],\r\n  \"cooking_time_in_minutes\": 15,\r\n  \"type\": \"DINNER\"\r\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes/bulk-create-recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"bulk-create-recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/recipes/search?Spaghetti",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"recipes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "Spaghetti",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
