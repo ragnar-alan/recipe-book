@@ -1,0 +1,20 @@
+[
+  {
+    "id": 100002,
+    "name": "Caesar Salad",
+    "cooking_time_in_minutes": 15,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100012,
+    "name": "Quinoa Salad",
+    "cooking_time_in_minutes": 20,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100015,
+    "name": "Caprese Salad",
+    "cooking_time_in_minutes": 10,
+    "type": "LUNCH"
+  }
+]

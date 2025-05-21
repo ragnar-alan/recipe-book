@@ -1,0 +1,122 @@
+[
+  {
+    "id": 100000,
+    "name": "Classic Pancakes",
+    "cooking_time_in_minutes": 20,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100001,
+    "name": "Spaghetti Carbonara",
+    "cooking_time_in_minutes": 30,
+    "type": "DINNER"
+  },
+  {
+    "id": 100002,
+    "name": "Caesar Salad",
+    "cooking_time_in_minutes": 15,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100003,
+    "name": "Chicken Curry",
+    "cooking_time_in_minutes": 45,
+    "type": "DINNER"
+  },
+  {
+    "id": 100004,
+    "name": "Avocado Toast",
+    "cooking_time_in_minutes": 10,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100005,
+    "name": "Beef Stir Fry",
+    "cooking_time_in_minutes": 25,
+    "type": "DINNER"
+  },
+  {
+    "id": 100006,
+    "name": "Greek Yogurt Parfait",
+    "cooking_time_in_minutes": 5,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100007,
+    "name": "Mushroom Risotto",
+    "cooking_time_in_minutes": 40,
+    "type": "DINNER"
+  },
+  {
+    "id": 100008,
+    "name": "Tuna Sandwich",
+    "cooking_time_in_minutes": 10,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100009,
+    "name": "Vegetable Soup",
+    "cooking_time_in_minutes": 35,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100010,
+    "name": "Chocolate Chip Cookies",
+    "cooking_time_in_minutes": 25,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100011,
+    "name": "Beef Lasagna",
+    "cooking_time_in_minutes": 60,
+    "type": "DINNER"
+  },
+  {
+    "id": 100012,
+    "name": "Quinoa Salad",
+    "cooking_time_in_minutes": 20,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100013,
+    "name": "Banana Smoothie",
+    "cooking_time_in_minutes": 5,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100014,
+    "name": "Grilled Salmon",
+    "cooking_time_in_minutes": 25,
+    "type": "DINNER"
+  },
+  {
+    "id": 100015,
+    "name": "Caprese Salad",
+    "cooking_time_in_minutes": 10,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100016,
+    "name": "Beef Tacos",
+    "cooking_time_in_minutes": 30,
+    "type": "DINNER"
+  },
+  {
+    "id": 100017,
+    "name": "Oatmeal with Fruits",
+    "cooking_time_in_minutes": 15,
+    "type": "BREAKFAST"
+  },
+  {
+    "id": 100018,
+    "name": "Vegetable Stir Fry",
+    "cooking_time_in_minutes": 20,
+    "type": "LUNCH"
+  },
+  {
+    "id": 100019,
+    "name": "Chocolate Cake",
+    "cooking_time_in_minutes": 50,
+    "type": "DINNER"
+  }
+]
