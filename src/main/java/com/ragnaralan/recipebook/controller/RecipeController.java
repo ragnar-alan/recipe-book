@@ -92,7 +92,7 @@ public class RecipeController {
     }
 
     // This endpoint made only for testing purposes
-    @Operation(summary = "Bulk create recipes", description = "Creates multiple recipes at once (for testing purposes only)")
+    @Operation(summary = "Bulk create recipes - for testing purposes onlyCheckstyle", description = "Creates multiple recipes at once (for testing purposes only)")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Recipes created successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid input data")

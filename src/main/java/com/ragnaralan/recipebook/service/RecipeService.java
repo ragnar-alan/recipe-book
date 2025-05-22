@@ -28,7 +28,7 @@ public class RecipeService {
     public RecipeDto getRecipe(Long id) {
         var recipe = recipeRepository.findById(id);
         var result = recipe
-                .map(recipeItem -> mapper.toDto(recipeItem))
+                .map(mapper::toDto)
                 .orElseThrow(() -> new RecipeNotFoundException("Recipe not found"));
         return result;
     }
@@ -39,8 +39,6 @@ public class RecipeService {
      * @return a list of {@link SimpleRecipeDto}
      */
     public List<SimpleRecipeDto> getSimpleRecipeList() {
-        //@TODO add pagination if you have time for it
-        // - https://howtodoinjava.com/spring-data/pagination-sorting-example/
         var recipes = recipeRepository.findAll();
         if (recipes.isEmpty()) {
             return List.of();
